@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="header__section" style="background-color: #e0d88c">
+      <div class="header__container max-w-screen-xl mx-auto">
+        <div
+          class="header__items flex items-center md:items-stretch justify-between md:gap-10"
+        >
+          <div class="header__logo flex items-center gap-2">
+            <div class="basis-14 p-1">
+              <img src="./img/logo.png" alt="fork-logo" class="h-full w-full" />
+            </div>
+            <h1 class="text-lg font-bold text-rest-g">RESTAURANT</h1>
+          </div>
+
+          <div class="header__links">
+            <div
+              class="hidden sidebar__links fixed top-0 right-0 bg-rest-y z-10 p-8 w-full sm:w-1/2"
+            >
+              <div class="absolute cross-menu top-0 left-0 p-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#004718"
+                  class="h-full w-10"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+              <ul
+                class="text-rest-g text-xl font-bold min-h-dvh p-12 text-center list-sides"
+              >
+                <li class="border-rest-g border-b p-5 md:px-6">Home</li>
+                <li class="border-rest-g border-b p-5 md:px-6">About</li>
+                <li
+                  class="border-rest-g border-b p-5 md:px-6"
+                  data-move="menu__section"
+                >
+                  Menu
+                </li>
+                <li
+                  class="border-rest-g border-b p-5 md:px-6"
+                  data-move="swiper__section"
+                >
+                  Special
+                </li>
+                <li class="p-5 md:px-6" data-move="footer__section">Contact</li>
+              </ul>
+            </div>
+            <div class="menu__bar md:hidden block max-w-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#004718"
+                class="w-full h-full"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 9h16.5m-16.5 6.75h16.5"
+                />
+              </svg>
+            </div>
+            <ul class="md:flex h-full text-rest-g font-bold hidden links-nav">
+              <li class="border-rest-g border-r border-l p-5 md:px-8">Home</li>
+              <li class="border-rest-g border-r p-5 md:px-6">About</li>
+              <li
+                class="border-rest-g border-r p-5 md:px-6"
+                data-move="menu__section"
+              >
+                Menu
+              </li>
+              <li
+                class="border-rest-g border-r p-5 md:px-6"
+                data-move="swiper__section"
+              >
+                Special
+              </li>
+              <li
+                class="border-rest-g border-r p-5 md:px-6"
+                data-move="footer__section"
+              >
+                Contact
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="hero__section relative bg-no-repeat bg-cover z-[2]"
+      style="background-image: url('./img/hero-img.jpg')"
+    >
+      <div
+        class="hero__container p-3 md:p-0 z-[5] relative min-h-dvh flex items-center justify-center md:justify-normal"
+      >
+        <div
+          class="basis-[26rem] md:basis-[30rem] bg-rest-ol text-white md:px-6 md:py-5 p-4 space-y-5 md:translate-x-1/4 md:ml-10"
+        >
+          <h1 class="text-2xl sm:text-3xl text-white">
+            Welcome to our Restaurant!
+          </h1>
+          <p class="text-sm sm:text-lg leading-5 md:leading-6">
+            We have something for everyone, from tasty vegetarian dishes and
+            snacks to delicious non-vegetarian options and refreshing beverages
+          </p>
+          <div class="max-w-48 h-12">
+            <button class="bg-rest-y w-full h-full text-rest-g font-medium">
+              Explore Menu
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="overlay absolute w-full h-full top-0 -z-[2]"
+        style="background-color: rgba(0, 0, 0, 0.5)"
+      ></div>
+    </div>
+    <div class="menu-list__nav bg-rest-gr">
+      <div class="menu-list__nav max-w-screen-xl mx-auto pt-8">
+        <div class="flex justify-center mb-8">
+          <h1
+            class="text-3xl sm:text-4xl p-2 px-4 bg-rest-ol text-white font-bold"
+          >
+            MENU
+          </h1>
+        </div>
+        <ul
+          class="mitem mx-auto flex justify-center md:justify-around text-base sm:text-lg md:text-2xl flex-wrap gap-8"
+        >
+          <li class="p-2 tabs cursor-pointer" data-move="main-course">
+            Main Course
+          </li>
+          <li class="p-2 cursor-pointer" data-move="special-kabab">
+            Special Kabab
+          </li>
+          <li class="p-2 cursor-pointer" data-move="veg-special">
+            Veg Special
+          </li>
+          <li class="p-2 cursor-pointer" data-move="roll">Rolls</li>
+          <li class="p-2 cursor-pointer" data-move="pizzas">Pizza</li>
+          <li class="p-2 cursor-pointer" data-move="beverages">Beverages</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="menu__section bg-rest-gr py-10">
+        <div class="menu__container max-w-screen-xl mx-auto relative b h-full">
+          <div class="menu__items hidden main-course items-display gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/chicken-korma.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CHICKEN KORMA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/mutton-korma.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>MUTTON KORMA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/paneer-tikka.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>PANEER TIKKA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/kadai-chicken.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>KADHAI CHICKEN</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/malai-kofta.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>MALAI KOFTA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__items hidden special-kabab gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/seekh-kabab.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>SEEK KABAB</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/shami-kabab.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>SHAMI KABAB</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/bihari-kabab.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>BIHARI KABAB</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/chapli-kabab.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CHAPLI KABAB</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/paneer-kabab.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>PANEER KABAB</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__items hidden veg-special gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem] aspect-[6/4]">
+                <img
+                  src="./img/veg-bhindi-masala.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>BHINDI MASALA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-biryani.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>VEG BIRYANI</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-chole-bhature.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CHOLE BHATURE</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-dal-fry.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>DAL FRY</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-momos.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>VEG MOMOS</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-mutter-paneer.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>MUTTER PANEER</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/veg-pulao.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>PULAO</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__items hidden roll gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/roll-chicken-roll.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CHICKEN ROLL</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/roll-egg-chicken-roll.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>EGG CHICKEN ROLL</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/roll-shawrma-roll.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>SHAWRMA ROLL</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__items hidden pizzas gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/pizza-cheesy-vegetable.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CHEESY VEGETABLE</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/pizza-corn.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>CORN SPL</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/pizza-maghereta.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>MAGHERRETA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/pizza-onion.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>ONION PIZZA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/pizza-tomato-pizza.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>TOMATO SPICY</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__items hidden beverages gap-2">
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/beverage-adrak-chai.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>ADRAK CHAI</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/beverage-mango-shake.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>MANGO SHAKE</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/beverage-normal-soda.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>NORMAL SODA</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/beverage-pineapple-mojito.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>PINEAPPLE MOJITO</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex p-1 gap-2 justify-center">
+              <div class="item-image basis-[14rem]">
+                <img
+                  src="./img/beverage-raspberry-mojito.jpeg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[6/4]"
+                />
+              </div>
+              <div class="item-desc space-y-3 bg-rest-h p-2">
+                <p>RASPBERRY MOJITO</p>
+                <ul class="flex justify-between gap-2">
+                  <li class="bg-rest-y p-1">200</li>
+                  <li class="bg-rest-y p-1">400</li>
+                  <li class="bg-rest-y p-1">600</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper__section bg-rest-gr pb-10">
+      <div class="section__container max-w-screen-xl mx-auto">
+        <div class="flex justify-center mb-8">
+          <h1
+            class="text-3xl md:text-4xl mt-8 p-2 px-4 bg-rest-ol text-white font-bold"
+          >
+            OUR SPECIALS
+          </h1>
+        </div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/nalli-nahari.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    NALLI NAHARI
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/mojito.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    MOJITOS
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/curry.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    CURRY
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/mutton-biryani.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    MUTTON BIRYANI
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/laccha-paratha.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    LACCHA PARATHA
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/ice-cream.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    ICE CREAM
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div class="relative">
+                <img
+                  src="./img/pizza.jpg"
+                  alt=""
+                  class="h-full w-full object-cover aspect-[4/3]"
+                />
+                <div
+                  class="absolute top-0 w-full bottom-0 flex justify-center items-center"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 0.4rem;
+                  "
+                >
+                  <p
+                    class="text-xl md:text-3xl p-2 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.551)"
+                  >
+                    PIZZA
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="photo__gallery__section bg-rest-y p-5 py-9">
+      <div class="flex justify-center mb-8">
+        <h1 class="text-3xl md:text-4xl p-4 bg-rest-g text-white font-bold">
+          PHOTO GALLERY
+        </h1>
+      </div>
+      <div
+        class="photo__gallery__container grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-screen-lg gap-5"
+      >
+        <div class="photo">
+          <img
+            src="./img/restaurant-1.jpg"
+            alt=""
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="./img/restaurant-3.jpg"
+            alt=""
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="./img/restaurant-2.jpg"
+            alt=""
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="./img/restaurant-4.jpg"
+            alt=""
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="footer__section bg-rest-d-ol text-white p-5 py-9">
+      <div
+        class="footer__container max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-[2fr_1fr]"
+      >
+        <div
+          class="contacts__section grid grid-cols-1 sm:grid-cols-2 gap-5 p-3"
+        >
+          <div class="space-y-3">
+            <div
+              class="flex gap-2 items-center justify-center sm:justify-normal"
+            >
+              <div class="basis-8">
+                <img src="./img/map-logo.png" alt="" class="w-full h-full" />
+              </div>
+              <h2 class="text-xl" style="box-shadow: inset 0 -3px 0 0 white">
+                Find Us
+              </h2>
+            </div>
+            <p class="text-center sm:text-left">
+              ABC Building,Opp ABC Bank ,Jamia Nagar,Okhla,New Delhi-25
+            </p>
+          </div>
+          <div class="space-y-3">
+            <div
+              class="flex gap-2 items-center justify-center sm:justify-normal"
+            >
+              <div class="basis-8">
+                <img
+                  src="./img/timings-logo.png"
+                  alt=""
+                  class="w-full h-full"
+                />
+              </div>
+              <h2 style="box-shadow: inset 0 -3px 0 0 white">Timings</h2>
+            </div>
+            <p class="text-center sm:text-left">Mon - Sun</p>
+            <p class="text-center sm:text-left">10 am - 11 pm</p>
+          </div>
+          <div class="space-y-2">
+            <div
+              class="flex gap-2 items-center justify-center sm:justify-normal"
+            >
+              <div class="basis-8">
+                <img src="./img/phone-logo.png" alt="" class="w-full h-full" />
+              </div>
+              <h2 style="box-shadow: inset 0 -3px 0 0 white">Contact Us</h2>
+            </div>
+            <p class="text-center sm:text-left">9853627819</p>
+            <p class="text-center sm:text-left">0982614265</p>
+          </div>
+          <div class="space-y-2 sm:space-y-3">
+            <div
+              class="flex gap-2 items-center justify-center sm:justify-normal"
+            >
+              <div class="basis-8">
+                <img src="./img/email-logo.png" alt="" class="w-full h-full" />
+              </div>
+              <h2 style="box-shadow: inset 0 -3px 0 0 white">Email Us</h2>
+            </div>
+            <p class="text-center sm:text-left">restaurantfood@xyz.com</p>
+          </div>
+        </div>
+        <div class="social__media__section p-3">
+          <div class="flex gap-3 justify-center sm:justify-end">
+            <div class="basis-10">
+              <img src="./img/whatsapp.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="basis-10">
+              <img src="./img/instagram.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="basis-10">
+              <img src="./img/facebook.png" alt="" class="w-full h-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

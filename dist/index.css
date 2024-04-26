@@ -1,0 +1,66 @@
+* {
+  font-family: "Inter";
+}
+.items-hidden {
+  display: hidden;
+}
+.items-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
+}
+
+.tabs {
+  box-shadow: inset 0 -4px 0 0 #43412a;
+  background-color: #e0d88c;
+}
+.mitem > li:hover {
+  background-color: #e0d88c;
+}
+
+/************** swiper implementation ****************/
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-color: #e6ede8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.2rem;
+}
+.swiper-slide > div {
+  max-width: 20rem;
+  border-radius: 0.5rem;
+}
+.swiper-slide img {
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  background-color: #000;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+/* *****************swiper ends******************* */
+
+.sidebar-show {
+  display: block;
+}
+@media (max-width: 21.25em) {
+  /* .menu-item {
+    display: block;
+  }
+  .item-desc > ul {
+    justify-content: start;
+  } */
+  .items-display {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+}
